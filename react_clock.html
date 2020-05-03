@@ -18,5 +18,18 @@ function tick() {
 setInterval(tick, 1000);
 </script>
 
+  
+<!-->Use with query < -->
+<div id="root1"></div>
+
+<script type="text/babel">
+function Welcome() {
+  return <h1>Hello React!</h1>;
+}
+
+ReactDOM.render(<Welcome />, document.querySelectorAll('div')[0]);
+</script>
+<!-- >ENd< -->
+  
 </body>
 </html>
