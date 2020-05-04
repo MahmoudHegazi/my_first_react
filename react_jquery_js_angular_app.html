@@ -6,13 +6,36 @@
 <script src= "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 <script src= "https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <body>
 
 <div id="root"></div>
 <button id="jquerybutton" onclick="jquery()">Add Jquery</button>
+
+
+<div ng-app="">
+ 
+<p>First Thing Enter Text in this input I need it and cick on the blue div or text</p>
+<p></p> 
+<p>Name : <input type="text" ng-model="name" placeholder="Enter any text here"></p>
+<h1 id="myvalue">. {{name}}</h1>
+
+</div>
+
+
 <script type="text/babel">
+
+const message = ['First Thing Enter Text in this input I need it and cick on the blue div or text',
+'last step click add jquery button then click on the element again or blue div'];
+
+for (var i = 0; i < message.length; i++) {
+  alert(message[i]);
+}
+var getValue = document.getElementById("myvalue");
+
+
 function Welcome() {
-  return <h1 id="mytext">Hello React!</h1>;
+  return <h1 id="mytext">I'm A react Text But jquery and angualr gonna change me</h1>;
 }
 
 ReactDOM.hydrate(<Welcome />, document.querySelectorAll('div')[0]);
@@ -24,6 +47,7 @@ x.style.background = "blue";
 function myFirst(event) {
   event.target.style.color = 'white';
    event.target.style.textAlign = 'center';
+   event.target.textContent = getValue.textContent;
 }
 x.addEventListener('click', myFirst);
 </script>
@@ -38,6 +62,8 @@ $(document).ready(function(){
     alert('The text removed using Jquery function');
   });
 });
+
+
 
 }
 
